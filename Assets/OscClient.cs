@@ -20,6 +20,13 @@ public class OscClient : MonoBehaviour
     {
         while (udpClient.Available > 0) {
             object[] msg = Osc.ToArray (udpClient.Receive (ref endPoint));
+
+            var targetName = msg [0].ToString ().Replace ("/", "_");
+            var target = GameObject.Find (targetName);
+            if (target) {
+                target.SendMessage ("OnOscMessage", msg [1]);
+            }
+
             string text = "";
             foreach (object o in msg)
                 text += o.ToString () + " ";
