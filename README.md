@@ -1,11 +1,11 @@
-unity-osc-test
---------------
+unity-touchosc-test
+-------------------
 
-An experiment with Unity and OSC (Open Sound Control).
+A sample project using TouchOSC with Unity.
 
 [Short demo](http://vine.co/v/hbwuvZx2Ybd )
 
-This project uses Osc.cs written by me.
-For details, see https://github.com/artm/Osc.cs
+This project uses unity-osc written by me.
+For details, see https://github.com/keijiro/unity-osc
 
 All other part of this project is in the public domain. 
