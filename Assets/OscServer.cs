@@ -8,7 +8,7 @@ public class OscServer : MonoBehaviour
     public int listenPort = 6666;
     UdpClient udpClient;
     IPEndPoint endPoint;
-    OscParser osc = new OscParser ();
+    Osc.Parser osc = new Osc.Parser ();
     
     void Start ()
     {
@@ -23,11 +23,11 @@ public class OscServer : MonoBehaviour
         }
 
         while (osc.MessageCount > 0) {
-            OscMessage msg = osc.PopMessage();
+            var msg = osc.PopMessage ();
 
             var target = GameObject.Find (msg.path.Replace ("/", "_"));
             if (target) {
-                target.SendMessage ("OnOscMessage", msg.data[0]);
+                target.SendMessage ("OnOscMessage", msg.data [0]);
             }
 
             Debug.Log (msg);

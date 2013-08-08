@@ -19,10 +19,10 @@ public class Cube : MonoBehaviour
             transform.localRotation;
 
         Vector3 targetScale = Vector3.one * (flag ? 2 : 1);
-        transform.localScale = Vector3.Lerp(targetScale, transform.localScale, Mathf.Exp(-10.0f * Time.deltaTime));
+        transform.localScale = Vector3.Lerp (targetScale, transform.localScale, Mathf.Exp (-10.0f * Time.deltaTime));
     }
 
-    void OnOscMessage(int value)
+    void OnOscMessage (int value)
     {
         flag = value > 0;
         if (flag) {
